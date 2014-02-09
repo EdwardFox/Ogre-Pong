@@ -7,4 +7,9 @@
     <LocalDebuggerWorkingDirectory>$(OGRE_HOME)\Bin\$(Configuration)</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LocalDebuggerCommand>$(OGRE_HOME)\Bin\$(Configuration)\$(ProjectName).exe</LocalDebuggerCommand>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerWorkingDirectory>$(OGRE_HOME)\Bin\$(Configuration)</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
 </Project>

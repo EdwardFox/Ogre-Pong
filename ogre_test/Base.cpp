@@ -155,6 +155,7 @@ bool Base::run(void)
 	mPluginsCfg = "plugins.cfg";
 #endif
 
+
 	// construct Ogre::Root (Needs to be created first)
 	mRoot = new Ogre::Root(mPluginsCfg);
 
@@ -163,6 +164,7 @@ bool Base::run(void)
 
 	// Show the configuration dialog and initialise the system
 	if(!(mRoot->restoreConfig() || mRoot->showConfigDialog()))
+	//if(!(mRoot->showConfigDialog()))
 	{
 		return false;
 	}
