@@ -1,5 +1,7 @@
 Debug/*
 ogre_test/Debug/*
+Release/*
+ogre_test/Release/*
 ipch/*
 Ogre.opensdf
 Ogre.sdf
