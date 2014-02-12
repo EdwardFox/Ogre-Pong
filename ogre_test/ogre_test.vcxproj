@@ -11,10 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ball.h" />
     <ClInclude Include="Base.h" />
+    <ClInclude Include="Bat.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Base.cpp" />
+    <ClCompile Include="Bat.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{07D11443-CA28-4E67-8B71-F74C5B7E4E1A}</ProjectGuid>
