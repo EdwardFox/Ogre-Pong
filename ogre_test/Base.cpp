@@ -24,7 +24,8 @@ Base::Base(void) :
 	mBall(),
 	mPlayer(),
 	mAI(),
-	mSpeed(1000)
+	mSpeed(1000),
+	mGameNode(0)
 {
 
 }
@@ -127,20 +128,22 @@ void Base::createFloor()
 	Ogre::Entity* planeEnt = mSceneMgr->createEntity("plane", "floor");
 	planeEnt->setMaterialName("Examples/GrassFloor");
 	planeEnt->setCastShadows(false);
-	mSceneMgr->getRootSceneNode()->createChildSceneNode()->attachObject(planeEnt);
+	mGameNode->createChildSceneNode()->attachObject(planeEnt);
 }
 
 void Base::createScene()
 {
+	mGameNode = mSceneMgr->getRootSceneNode()->createChildSceneNode();
+
 	createFloor();
 
-	mPlayer.create("Player", mSceneMgr);
+	mPlayer.create("Player", mSceneMgr, mGameNode);
 	mPlayer.translate(0.0, 51.0, -450.0);
 
-	mAI.create("AI", mSceneMgr);
+	mAI.create("AI", mSceneMgr, mGameNode);
 	mAI.translate(0.0, 51.0, 450.0);
 
-	mBall.create("Ball", mSceneMgr);
+	mBall.create("Ball", mSceneMgr, mGameNode);
 	mBall.translate(0.0, 50.0, 0.0);
 	mBall.setSpeed(mSpeed, 0.0, -mSpeed);
 
@@ -267,6 +270,8 @@ bool Base::frameRenderingQueued(const Ogre::FrameEvent& evt)
 
 	if(mBall.getPosition().z < -500 || mBall.getPosition().z > 500)
 		mBall.setPosition(0.0, 50.0, 0.0);
+
+	mGameNode->yaw(Ogre::Degree(45)*evt.timeSinceLastEvent);
 
 	return true;
 }

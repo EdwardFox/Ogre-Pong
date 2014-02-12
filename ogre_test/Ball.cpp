@@ -14,12 +14,12 @@ Ball::~Ball(void)
 {
 }
 
-void Ball::create(Ogre::String id, Ogre::SceneManager* scMgr)
+void Ball::create(Ogre::String id, Ogre::SceneManager* scMgr, Ogre::SceneNode* gameNode)
 {
 	mEntity = scMgr->createEntity(id, Ogre::SceneManager::PT_SPHERE);
 	mEntity->setMaterialName("Examples/white");
 
-	mEntityNode = scMgr->getRootSceneNode()->createChildSceneNode();
+	mEntityNode = gameNode->createChildSceneNode();
 	mEntityNode->attachObject(mEntity);
 
 	mEntityNode->setScale(0.20, 0.20, 0.20);

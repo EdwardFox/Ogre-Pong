@@ -54,6 +54,8 @@ class Base : public Ogre::WindowEventListener, public Ogre::FrameListener, OgreB
 		Ogre::SceneManager* mSceneMgr;
 		Ogre::Camera* mCamera;
 
+		Ogre::SceneNode *mGameNode;
+
 		OIS::InputManager* mInputManager;
 		OIS::Mouse* mMouse;
 		OIS::Keyboard* mKeyboard;

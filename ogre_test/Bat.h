@@ -9,7 +9,7 @@ public:
 	Bat(void);
 	~Bat(void);
 
-	void create(Ogre::String id, Ogre::SceneManager *scMgr);
+	void create(Ogre::String id, Ogre::SceneManager *scMgr, Ogre::SceneNode* gameNode);
 
 	Ogre::Vector3 const getPosition() const;
 	Ogre::Vector3 const getSpeed() const;

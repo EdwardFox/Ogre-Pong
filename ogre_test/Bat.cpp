@@ -14,12 +14,12 @@ Bat::~Bat(void)
 {
 }
 
-void Bat::create(Ogre::String id, Ogre::SceneManager* scMgr)
+void Bat::create(Ogre::String id, Ogre::SceneManager* scMgr, Ogre::SceneNode* gameNode)
 {
 	mEntity = scMgr->createEntity(id, Ogre::SceneManager::PT_CUBE);
 	mEntity->setMaterialName("Examples/white");
 
-	mEntityNode = scMgr->getRootSceneNode()->createChildSceneNode();
+	mEntityNode = gameNode->createChildSceneNode();
 	mEntityNode->attachObject(mEntity);
 
 	mEntityNode->setScale(1.0, 0.25, 0.25);
